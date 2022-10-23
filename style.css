@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #ceefef;
+    animation: day 15s linear infinite;
+}
+
+section{
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section .sky{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+section .sky .sun{
+    width: 180px;
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-left: -90px;
+    transform-origin: 50% 600px;
+    animation: sun 15s linear infinite;
+}
+section .sky .moon{
+    width: 160px;
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    transform-origin: 50% 600px;
+    animation: moon 15s linear infinite;
+}
+section .sky .cloud1{
+    width: 160px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    animation: cloud1 10s linear infinite;
+}
+section .sky .cloud2{
+    width: 90px;
+    position: absolute;
+    top: 120px;
+    left: 100px;
+    animation: cloud2 12s linear infinite;
+}
+
+/* city 배경 */
+section .city{
+    width: 100%;
+}
+
+section .city .city_img{
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* keyframes */
+@keyframes day {
+    0%{
+        background-color: #ceefef;
+    }
+    25%{
+        background-color: #ceefef;
+    }
+    50%{
+        background-color: purple;
+    }
+    75%{
+        background-color: purple;
+    }
+    100%{
+        background-color: #ceefef;
+    }
+}
+@keyframes sun {
+    0%{
+        transform: rotate(-90deg);
+        opacity: 0;
+    }
+    25%{
+        transform: rotate(0deg);        
+        opacity: 1;
+    }
+    50%{
+        transform: rotate(90deg);
+        opacity: 0;    
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes moon {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    50%{
+        transform: rotate(90deg);
+        opacity: 0;
+    }
+    75%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(-90deg);        
+        opacity: 0;
+    }
+}
+@keyframes cloud1{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        left: calc(100% - 160px);
+    }
+}
+@keyframes cloud2 {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+        left: calc(100% - 160px);
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
